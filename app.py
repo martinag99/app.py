@@ -44,9 +44,9 @@ def main():
     
     #escoger el modelo preferido
     option = ['Regresión Logística']
-    model = st.sidebar.selectbox('Escoja el modelo a utilizar', option)
+    model = st.sidebar.selectbox('Utilizar Regresion Logística', option)
 
-    st.subheader('Modelo Seleccionado')
+    st.subheader('Modelo')
     st.subheader(model)
     st.write(df)
 
