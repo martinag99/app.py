@@ -1,0 +1,13 @@
+jupyterlab
+pandas
+bokeh
+matplotlib
+unicode
+pandas-datareader
+flask
+numpy
+re
+nltk
+sklearns
+matplotlib
+seaborn
