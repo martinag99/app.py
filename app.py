@@ -11,11 +11,7 @@ import pickle
 import pandas as pd
 
 
-"Trabajamos a partir del dataset de noticias falsas y verdades."
-"Predecimos si una noticia es fake a través de las palabras que contiene en su titulo"
-
-
-modelo = 'C:/Users/mgarcia/Downloads/TP final/final_model.pkl'
+modelo = 'https://github.com/martinag99/app.py/blob/main/final_model.pkl'
 
 
 
