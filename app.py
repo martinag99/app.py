@@ -1,29 +1,28 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Feb 24 00:06:22 2023
+Created on Mon Feb 27 17:09:25 2023
 
 @author: mgarcia
 """
 
+#importar las librerias necesarias
 
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
 import streamlit as st
 import pickle
 import pandas as pd
 
-
-modelo = 'https://github.com/martinag99/app.py/blob/main/final_model.pkl'
-
-
-
-with open(modelo, 'rb') as f_model:
+#Leo el archivo pickle
+with open('modelo.pkl', 'rb') as f_model:
     regresion = pickle.load(f_model)
 
-#funcion para clasificar
+
 def classify(num):
     if num == 0:
         return 'True'
     else:
-        
         return 'False'
 
 def main():
@@ -33,28 +32,23 @@ def main():
     st.sidebar.header('Completar')
     
     
-
     #funcion para poner los parametros
     def user_input_parameters():
-        titulo_noticia = st.text_input("Noticia")
-        data = {"Noticia": titulo_noticia}
+        titulo_noticia = st.sidebar.slider('Noticia')
+        data = {'titulo_noticia': titulo_noticia}
         features = pd.DataFrame(data, index=[0])
         return features   
     df = user_input_parameters()
     
-    #escoger el modelo preferido
+#Seleciono el modelo
+ 
     option = ['Regresión Logística']
-    model = st.sidebar.selectbox('Utilizar Regresion Logística', option)
+    model = st.sidebar.selectbox('¿Qué modelo utilizará?', option)    
 
-    st.subheader('Modelo')
-    st.subheader(model)
-    st.write(df)
 
-    if st.button('Procesar'):
-        if model == 'Regresión Logística':
-            st.success(classify(regresion.predict(df)))
+
 
 
 if __name__ == '__main__':
     main()    
-    
+

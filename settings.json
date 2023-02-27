@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb 27 17:07:41 2023
+
+@author: mgarcia
+"""
+
+{
+ "python.pythonPath": "${workspaceFolder}/venv/bin/python"
+ }
